@@ -1,0 +1,24 @@
+package br.com.torres.praisePPGenerate.view;
+
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+public class Frame extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	public Frame() {
+		render();
+	}
+	
+	public void render() {
+		setSize(300, 500);
+		setPreferredSize(new Dimension(300,500));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		pack();
+		setName("Gerador - Hinos para PowerPoint");
+	}
+}

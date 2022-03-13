@@ -1,0 +1,16 @@
+package br.com.torres.praisePPGenerate;
+
+import java.io.IOException;
+
+import br.com.torres.praisePPGenerate.service.GeneratePP;
+
+public class PraisePPGenerateAplication{
+
+	public static void main(String[] args) throws IOException {
+		//Frame frame = new Frame();
+		//frame.add(new GenereteDataInput());
+		//frame.render();
+		GeneratePP teste = new GeneratePP();
+		teste.generatePP("TEste","teste","teste","TEste","TEsteadas");
+	}
+}

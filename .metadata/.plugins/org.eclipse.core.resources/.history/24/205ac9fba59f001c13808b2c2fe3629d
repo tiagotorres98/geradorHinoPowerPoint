@@ -1,0 +1,17 @@
+package br.com.torres.praisePPGenerate.view;
+
+import javax.swing.JFrame;
+
+public class Frame extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	public Frame() {
+		render();
+	}
+	
+	public void render() {
+		setSize(300, 500);
+		setPreferredSize(new Dimension(300,500));
+	}
+}

@@ -1,0 +1,14 @@
+package br.com.torres.praisePPGenerate;
+
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class PraisePPGenerateAplication{
+
+	public static void main(String[] args) {
+
+	}
+}

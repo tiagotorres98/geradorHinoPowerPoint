@@ -1,0 +1,11 @@
+package br.com.torres.praisePPGenerate;
+
+import br.com.torres.praisePPGenerate.view.MainFrame;
+
+public class PraisePPGenerateAplication {
+
+	public static void main(String[] args) {
+		MainFrame app = new MainFrame();
+		app.add(CreateNewPP().render());
+	}
+}

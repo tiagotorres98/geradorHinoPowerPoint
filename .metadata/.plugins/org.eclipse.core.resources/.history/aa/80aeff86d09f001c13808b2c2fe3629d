@@ -1,0 +1,20 @@
+package br.com.torres.praisePPGenerate;
+
+import java.io.IOException;
+
+import br.com.torres.praisePPGenerate.view.Frame;
+import br.com.torres.praisePPGenerate.view.ProgressBar;
+
+public class PraisePPGenerateAplication{
+
+	public static void main(String[] args) throws IOException {
+		Frame frame = new Frame();
+		ProgressBar teste = new ProgressBar();
+		//frame.add(new GenereteDataInput());
+		frame.add(teste);
+		frame.render();
+		for(int i = 0;i < 100; i++) {
+			teste.updateValue(i);
+		}
+	}
+}

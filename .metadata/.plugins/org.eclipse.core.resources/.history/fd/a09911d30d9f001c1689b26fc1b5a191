@@ -1,0 +1,23 @@
+package br.com.torres.praisePPGenerate.view;
+
+import javax.swing.JPanel;
+
+import br.com.torres.praisePPGenerate.view.components.CreateNewPPComponents;
+
+public class CreateNewPP extends JPanel{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	CreateNewPPComponents components;
+	
+	public JPanel render() {
+		components = new CreateNewPPComponents();
+		this.setBackground(getBackground().WHITE);
+		setLayout(null);
+		this.add(components.render());
+		return this;
+	}
+}

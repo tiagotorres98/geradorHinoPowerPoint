@@ -1,0 +1,70 @@
+package br.com.torres.praisePPGenerate.view.components;
+
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CreateNewPPComponents extends JPanel{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private JTextField titlePP;
+	private JTextField titleInicialSlide;
+	private JTextField subTitleInicialSlide;
+	
+	private JTextArea lyrics;
+	
+	private JLabel LTitlePP;
+	private JLabel LTitleInicialSlide;
+	private JLabel LSubTitleInicialSlide;
+	
+	GridLayout dataInsertInfo;
+	
+	public JPanel render() {
+		inicializeVariables();
+		configureTitles();
+		configureLayout();
+		this.add(LTitlePP);
+		this.add(titlePP);
+		this.add(LTitleInicialSlide);
+		this.add(titleInicialSlide);
+		this.add(LSubTitleInicialSlide);
+		this.add(subTitleInicialSlide);
+		this.add(lyrics);
+		return this;
+	}
+	
+	public void inicializeVariables() {
+		titlePP = new JTextField();
+		titleInicialSlide = new JTextField();
+		subTitleInicialSlide = new JTextField();
+		LTitlePP = new JLabel("Nome do Arquivo");
+		LTitleInicialSlide = new JLabel("Nome do Hino");
+		LSubTitleInicialSlide = new JLabel("Nome do Artista");
+		dataInsertInfo = new GridLayout(0,2);
+		lyrics = new JTextArea();
+	}
+	
+	public void configureTitles() {
+		titlePP.setPreferredSize(new Dimension(170, 20));
+		titleInicialSlide.setPreferredSize(new Dimension(170, 20));
+		subTitleInicialSlide.setPreferredSize(new Dimension(170, 20));
+	}
+	
+	public void configureLayout() {
+
+	}
+}

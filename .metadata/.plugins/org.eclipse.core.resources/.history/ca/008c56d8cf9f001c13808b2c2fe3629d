@@ -1,0 +1,22 @@
+package br.com.torres.praisePPGenerate.view;
+
+import javax.swing.JProgressBar;
+
+public class ProgressBar extends JProgressBar{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	int barValue = 0;
+	
+	public ProgressBar() {
+		render();
+	}
+	
+	public void render() {
+		
+	}
+
+}

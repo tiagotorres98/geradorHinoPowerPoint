@@ -1,0 +1,16 @@
+package br.com.torres.praisePPGenerate;
+
+import br.com.torres.praisePPGenerate.view.CreateNewPP;
+import br.com.torres.praisePPGenerate.view.MainFrame;
+
+public class PraisePPGenerateAplication extends MainFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+		add(new CreateNewPP().render());
+	}
+}

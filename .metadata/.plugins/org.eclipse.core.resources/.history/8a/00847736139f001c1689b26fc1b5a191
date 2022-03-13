@@ -1,0 +1,96 @@
+package br.com.torres.praisePPGenerate.view.components;
+
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.text.DefaultCaret;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CreateNewPPComponents extends JPanel{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private JTextField titlePP;
+	private JTextField titleInicialSlide;
+	private JTextField subTitleInicialSlide;
+	
+	private JTextArea lyrics;
+	
+	private JLabel LTitlePP;
+	private JLabel LTitleInicialSlide;
+	private JLabel LSubTitleInicialSlide;
+	private JLabel LLyrics;
+	
+	public JPanel render() {
+		inicializeVariables();
+		configureTitles();
+		configureLayout();
+		return this;
+	}
+	
+	public void inicializeVariables() {
+		titlePP = new JTextField();
+		titleInicialSlide = new JTextField();
+		subTitleInicialSlide = new JTextField();
+		LTitlePP = new JLabel("Nome do Arquivo");
+		LTitleInicialSlide = new JLabel("Nome do Hino");
+		LSubTitleInicialSlide = new JLabel("Nome do Artista");
+		LLyrics = new JLabel("Letra do Hino");
+		lyrics = new JTextArea();
+	}
+	
+	public void configureTitles() {
+		titlePP.setPreferredSize(new Dimension(170, 20));
+		titleInicialSlide.setPreferredSize(new Dimension(170, 20));
+		subTitleInicialSlide.setPreferredSize(new Dimension(170, 20));
+	}
+	
+	public void configureLayout() {
+		JPanel pInsertDataInfo = new JPanel();
+		JPanel pLyrics = new JPanel();
+		GridLayout main = new GridLayout(2,1);
+		GridLayout dataInsertInfo = new GridLayout(0,2);
+		GridLayout dataInsertLyrics = new GridLayout(0,1);
+		
+		
+		dataInsertInfo.setVgap(10);
+		pInsertDataInfo.setBackground(getBackground().white);
+		main.setVgap(10);
+		this.setLayout(main);
+		
+		pInsertDataInfo.add(LTitlePP);
+		pInsertDataInfo.add(titlePP);
+		pInsertDataInfo.add(LTitleInicialSlide);
+		pInsertDataInfo.add(titleInicialSlide);
+		pInsertDataInfo.add(LSubTitleInicialSlide);
+		pInsertDataInfo.add(subTitleInicialSlide);
+		pInsertDataInfo.setLayout(dataInsertInfo);
+		this.add(pInsertDataInfo);
+
+		DefaultCaret caret = (DefaultCaret)lyrics.getCaret();
+		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.add(lyrics);
+		scrollPane.setViewportView(lyrics);
+		lyrics.setPreferredSize(new Dimension(400,20));
+		
+		lyrics.setBackground(getBackground().LIGHT_GRAY);
+		pLyrics.setLayout(dataInsertLyrics);
+		pLyrics.add(LLyrics);
+		pLyrics.add(lyrics);
+		this.add(pLyrics);
+;	}
+	
+}

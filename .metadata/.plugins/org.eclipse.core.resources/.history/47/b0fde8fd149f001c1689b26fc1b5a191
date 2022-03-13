@@ -1,0 +1,8 @@
+package br.com.torres.praisePPGenerate;
+
+public class PraisePPGenerateAplication{
+
+	public static void main(String[] args) {
+
+	}
+}

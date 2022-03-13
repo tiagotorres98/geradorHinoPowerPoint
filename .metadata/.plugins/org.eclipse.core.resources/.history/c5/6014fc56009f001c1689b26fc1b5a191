@@ -1,0 +1,12 @@
+package br.com.torres.praisePPGenerate.view;
+
+import javax.swing.JPanel;
+
+public class CreateNewPP extends JPanel{
+	
+	public Jpanel render() {
+		app.add(new CreateNewPPComponents().render());
+		app.createFrame();
+		return this;
+	}
+}
