@@ -8,6 +8,7 @@
 	<name>Praise PP Generator</name>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>com.tascape</groupId>
 			<artifactId>reactor-ui</artifactId>
@@ -32,7 +33,7 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-	
-	
+
+
 
 </project>
