@@ -1,19 +1,17 @@
 package br.com.torres.praisePPGenerate.service;
 
-import java.awt.Color;
 import java.awt.Rectangle;
-import java.awt.event.WindowEvent;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 import org.apache.poi.sl.usermodel.Placeholder;
 import org.apache.poi.xslf.usermodel.XMLSlideShow;
 import org.apache.poi.xslf.usermodel.XSLFSlide;
-import org.apache.poi.xslf.usermodel.XSLFTextParagraph;
-import org.apache.poi.xslf.usermodel.XSLFTextRun;
 import org.apache.poi.xslf.usermodel.XSLFTextShape;
-
-import br.com.torres.praisePPGenerate.view.ProgressBar;
 
 public class GeneratePP {
 
@@ -28,29 +26,31 @@ public class GeneratePP {
 	}
 
 	public void generateLyricsSlide(XMLSlideShow ppt, String lyrics) {
-		String[] vLyrics = lyrics.split("\n");
-		int j = 0;
-		String t = "";
+		List<String> vLyrics = new ArrayList<String>(Arrays.asList(lyrics.split("\n")));
+		int counter = 0;
+		String text = "";
 		XSLFSlide slide;
 		XSLFTextShape titleShape = null;
 
-		for (int i = 0; i < vLyrics.length; i++) {
-			if (j == 0 && !vLyrics[i].isEmpty()) {
+		Iterator<String> lineLyrics = vLyrics.iterator();
+
+		while (lineLyrics.hasNext()) {
+			String line = lineLyrics.next();
+			
+			if (counter == 0 && !line.isEmpty()) {
 				slide = ppt.createSlide();
 				titleShape = slide.createTextBox();
 				titleShape.setPlaceholder(Placeholder.CENTERED_TITLE);
 				titleShape.setAnchor(new Rectangle(0, 100, 720, 200));
 			}
-			if (!vLyrics[i].isEmpty()) {
-				t += vLyrics[i];
-				t += "\n";
-				j++;
+			if (!line.isEmpty()) {
+				text += line + "\n";
+				counter++;
 			}
-			if (j == 4) {
-				titleShape.setText(t);
-				j = 0;
-				t = "";
-
+			if (counter == 4) {
+				titleShape.setText(text);
+				counter = 0;
+				text = "";
 			}
 
 		}

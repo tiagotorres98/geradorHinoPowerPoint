@@ -12,7 +12,7 @@ public class Frame extends JFrame {
 		setSize(600, 300);
 		setPreferredSize(new Dimension(600,300));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Gerador de Hinos em Power Point -  Develop by: Tiago Torres");
+		setTitle("Gerador de Hinos em Power Point -  Develop by: Tiago Torres - V1.2.1");
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setResizable(false);
